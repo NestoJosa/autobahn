@@ -1,0 +1,52 @@
+/* _heading-block.scss */
+
+/* 
+
+  Heading Block
+
+*/
+
+.heading-block {
+  @include grid-cols-and-gap;
+  grid-template-rows:
+    70px  /* 1. empty */          
+    auto  /* 2. primary-heading */           
+    25px  /* 3. empty */           
+    auto  /* 4. secondary-heading */         
+    25px  /* 5. empty */           
+    auto  /* 6. paragraph */     
+    40px  /* 7. empty */
+  ;
+
+  /* center the texts */
+  text-align: center;
+
+  /* place all of the elements in the middle */  
+  > * { grid-column: content-start / content-end; }
+
+  &__primary-heading { grid-row: 2; }
+
+  &__secondary-heading { grid-row: 4; }
+
+  &__paragraph {
+    grid-row: 6;
+    opacity: 0.8;
+  }
+}
+  
+/* add more left- and right margin on tablet upwards, 
+by moving the headings one column inwards on each side */
+.heading-block--more-margin {
+  @include for-tablet-up {
+    & .heading-block__secondary-heading,
+    & .heading-block__paragraph {
+      grid-column: 4 / 12;
+    }
+
+    @include max-width-margin-auto;
+  }
+}
+
+/******************************/
+/******************************/
+/******************************/

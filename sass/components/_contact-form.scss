@@ -1,0 +1,83 @@
+/* _contact-form.scss */
+
+/* 
+
+  Contact Form
+
+*/
+
+/* 
+
+  CONTACT PAGE / BOOK A MEETING PAGE
+  contact-form
+
+*/
+
+.contact-form {
+  max-width: 1600px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 5% repeat(12, 1fr) 5%;
+  column-gap: 2%;
+  grid-template-rows: 
+    50px  /* 1. empty */
+    30px  /* 2. heading */
+    25px  /* 3. empty */
+    auto  /* 4. body */
+    50px  /* 5. empty */
+  ;
+}
+
+/* place the elements */
+.contact-form__heading {
+  grid-column: 2 / 7;
+  grid-row: 2;
+}
+.contact-form__body {
+  grid-column: 2 / 7;
+  grid-row: 4;
+}
+.contact-form__form {
+  grid-column: 8 / 14;
+  grid-row: 4;
+}
+
+/* add some space under the p's */
+.contact-form__body p {
+  margin-bottom: 1.5em !important;
+}
+
+/* remove the possibility to resize the text area */
+.contact-form__form textarea {
+  resize: none;
+}
+
+/* change the grid when we hit standard ipad size*/
+@media only screen and (max-width: 768px) {
+  .contact-form--grid-mobile {
+    /* one col layout */
+    grid-template-columns: 5% 1fr 5%;
+    /* add more rows */
+    grid-template-rows: 
+      50px  /* 1. empty */
+      30px  /* 2. heading */
+      25px  /* 3. empty */
+      auto  /* 4. body */
+      50px  /* 5. empty */
+      auto  /* 6. form */
+      50px  /* 7. empty */
+    ;
+  }
+
+  /* update the placement of the elements,
+  start by placing them all in the middle column */
+  .contact-form--grid-mobile > * { grid-column: 2; }
+  /* and the contact form on the new row nr6. */
+  .contact-form--grid-mobile .contact-form__form {
+    grid-row: 6;
+  } 
+}
+
+/******************************/
+/******************************/
+/******************************/

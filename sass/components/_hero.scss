@@ -1,0 +1,84 @@
+/* _hero.scss */
+
+/* 
+
+  HERO
+
+  - the hero that can be seen on the frontpage ONLY:
+  the subpage hero's are named sub-hero. 
+
+*/
+
+.hero {
+  /* include the global grid and cols,
+  the rows are defined locally */ 
+  @include grid-cols-and-gap;
+  /* note: the 0px rows will come in handy when the image changes,
+  and we need some empty rows before and after the image */
+  grid-template-rows:
+    0px     /* 1. empty */          
+    auto    /* 2. image */           
+    0px     /* 3. empty */           
+    auto    /* 4. heading */         
+    10px    /* 5. empty */           
+    auto    /* 6. sub-heading */     
+    10px    /* 7. empty */
+  ;
+
+  /* place the elements */
+  &__heading, &__sub-heading { grid-column: content-start / content-end; }
+
+  &__heading { grid-row: 4; }
+  &__sub-heading { grid-row: 6; }
+
+  /* make the image take all horizontal space,
+  incuding the left- and right margins */
+  &__image {
+    grid-column: 1 / -1;   
+    grid-row: 2;
+  }
+}
+
+/* respond to tablet-upwards: lessen the amount of rows 
+and reposition the elements */
+.hero--horizontal {
+  @include for-tablet-up {
+    /* redefine the rows. Note: the image will span
+    all of the rows top-down, so that's why its not included
+    in the following list of rows */
+    grid-template-rows:
+      50px      /* 1. empty */          
+      1.2fr     /* 2. heading */           
+      10px      /* 3. empty */           
+      1fr       /* 4. sub-heading */         
+      50px      /* 5. empty */           
+    ;
+
+    /* reposition the elements -
+    span the heading and subheading from the left to the middle */
+    .hero__heading, .hero__sub-heading { grid-column: content-start / span 7; }
+
+    .hero__heading {
+      grid-row: 2;
+      /* make the heading sit on top of the sub-heading */
+      align-self: end;
+    }
+
+    .hero__sub-heading { grid-row: 4; }
+
+    .hero__image {
+      /* span the img from the middle, to the right-most-edge,
+      including the right-margin */
+      grid-column: 8 / -1;
+      /* use all vertical space */
+      grid-row: 1 / -1;
+    }
+
+    @include max-width-margin-auto;
+  }
+}
+
+/******************************/
+/******************************/
+/******************************/
+

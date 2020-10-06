@@ -1,0 +1,44 @@
+/* _cards-grid.scss */
+
+/* 
+
+  Cards Grid
+
+*/
+
+.cards-grid-wrapper {
+  // include the global grid, columns and gap
+  @include grid-cols-and-gap;
+  grid-template-rows: 
+    10px  // empty
+    1fr   // cards-grid 
+    10px  // empty
+  ;
+
+  @include for-laptop-up {
+    @include max-width-margin-auto;
+  }
+}
+
+.cards-grid {
+  grid-column: content-start / content-end;
+  grid-row: 2;
+
+  // the cards inner grid
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 20px;
+}
+
+// change the layout on larger screens to 
+// three cards next to each other
+.cards-grid--three-cols {
+  @include for-laptop-up {
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 2%;
+  }
+}
+
+/******************************/
+/******************************/
+/******************************/

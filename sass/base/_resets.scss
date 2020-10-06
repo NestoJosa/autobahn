@@ -1,0 +1,35 @@
+/* _resets.scss */
+
+/* remove any default padding/margin from all elements,
+and include the padding and border in their total width/height */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* remove the margin - wordpress reset */
+h1, h2, h3, h4, h5, h6, p, ul, li {
+  margin-top: 0!important; 
+  margin-right: 0!important;
+  margin-bottom: 0!important;
+  margin-left: 0!important;
+}
+
+/* remove salients padding rules */
+p { 
+  padding-top: 0 !important;
+  padding-right: 0 !important;
+  padding-bottom: 0 !important;
+  padding-left: 0 !important;
+}
+
+/* remove the bullets from the lists */
+li { list-style-type: none !important; }
+
+/* remove the default underline from all links */
+a { text-decoration: none; }
+
+/******************************/
+/******************************/
+/******************************/

@@ -1,0 +1,101 @@
+/* _footer.scss */
+
+/* 
+
+  Footer
+
+*/
+
+.footer-wrapper {
+  background-color: map-get($brand-colors, blue-4) !important; // override Salient
+}
+
+.footer {
+  @include grid-cols-and-gap;
+  grid-template-rows: 
+    7vw       // 1. empty
+    288px     // 2. newsletter-signup
+    75px      // 3. empty
+    100px     // 4. links
+    50px      // 5. empty
+    auto      // 6. logo-link
+    25px      // 7. empty
+  ;
+
+  // place all of the el's in the content-area
+  > * { grid-column: content-start / content-end; }
+  // and one element in each second row
+  &__newsletter-signup { grid-row: 2; }
+  &__links { grid-row: 4; }
+  &__logo-link { grid-row: 6; }
+
+  // style the newsletter-signup
+  &__newsletter-signup { 
+    background-color: white;
+    border-radius: $border-radius;
+    display: flex;
+    justify-content: center;
+    align-items: center
+  }
+
+  // make the links into a flex container
+  &__links {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  
+  // define a fixed size for the logo-link
+  &__logo-link {
+    height: auto !important;
+    width: 165px !important;
+  }
+
+  &__logo-image {
+    display: block;
+  }
+}
+
+// change the layout on laptop upwards
+.footer--horizontal {
+  @include for-tablet-up {
+    grid-template-rows: 
+      50px     // 1. empty
+      auto    // 2. logo-link
+      50px    // 3. empty
+      100px   // 4. links
+      50px     // 5. empty
+    ;
+
+    // reposition the elements
+    .footer__newsletter-signup {
+      grid-column: 8 / content-end;
+      grid-row: 2 / 5;
+
+      height: 288px;
+    }
+    .footer__logo-link {
+      grid-row: 2;
+    }
+    .footer__links {
+      grid-row: 4;
+    }
+
+     @include max-width-margin-auto; 
+  }
+}
+
+/* change the flex direction of the footer-links,
+from column to rows on larger screens, and adjust */
+.footer__links--flex-dir-rows {
+  @include for-laptop-up {
+    flex-direction: row;
+    align-items: flex-end;
+    width: 340px;
+  }
+}
+
+/******************************/
+/******************************/
+/******************************/

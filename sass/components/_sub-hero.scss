@@ -1,0 +1,69 @@
+/* _sub-hero.scss */
+
+/* 
+
+  SUB HERO 
+
+*/
+
+.sub-hero {
+  @include grid-cols-and-gap;
+  grid-template-rows:
+    50px    // 1. empty
+    auto    // 2. heading 
+    20px    // 3. empty 
+    auto    // 4. sub-heading
+    30px    // 5. empty
+    auto    // 6. image
+    50px    // 7. empty
+  ;
+
+  // place all of the elements in the content area
+  > * { grid-column: content-start / content-end; }
+
+  // place an element on each second row
+  &__heading      { grid-row: 2; }
+  &__sub-heading  { grid-row: 4; }
+  &__image        { grid-row: 6; }
+
+  // set the light-blue brand-color as a background
+  background-color: map-get($brand-colors, blue-4);
+}
+
+// change the layout on tablets upwards
+// from vertical-mobile-first to horizontal
+.sub-hero--horizontal {
+  @include for-tablet-up {
+    // Note: the image will span all rows
+    grid-template-rows: 
+      1.2fr   // 1. heading
+      10px    // 2. empty   
+      1fr     // 3. sub-heading
+    ;
+
+    // reposition the elements
+    .sub-hero__heading {
+      grid-column: content-start / span 5;
+      grid-row: 1;
+      align-self: end; 
+    }
+    .sub-hero__sub-heading {
+      grid-column: content-start / span 6; 
+      grid-row: 3; 
+    }
+    .sub-hero__image {
+      // place the image from the middle 
+      // to the right most edge, including the right-margin
+      grid-column: 8 / -1;
+      // and span all of the rows top-down
+      grid-row: 1 / -1; 
+    }
+
+    @include max-width-margin-auto;
+  }
+}
+
+/******************************/
+/******************************/
+/******************************/
+

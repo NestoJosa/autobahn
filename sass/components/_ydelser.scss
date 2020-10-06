@@ -1,0 +1,142 @@
+/* _ydelser */
+
+/* 
+
+  Ydelser
+
+*/
+
+
+.ydelser {
+  @include grid-cols-and-gap;
+  // note: the rows are implicit on mobile
+  row-gap: 20px;
+  
+  &__item {
+    // place the ydelser_items on the outer-parent grid
+    grid-column: content-start / content-end;
+
+    // this inner grid contains the image and name
+    display: grid;
+    grid-template-rows: 
+      5px  // 1. empty 
+      auto  // 2. image 
+      20px  // 3. empty 
+      50px  // 4. name 
+      5px  // 5. empty
+    ;
+    // center along the inline-row axis
+    justify-items: center;
+    // center the text
+    text-align: center; 
+  }
+  
+  // row placement on the INNER grid
+  &__image { grid-row: 2; }
+  &__name { grid-row: 4; }
+
+  // style the image
+  &__image {
+    border-radius: $border-radius;
+    width: 64px !important; // overrule salient
+  }
+}
+
+.ydelser--four-rows {
+  @include for-tablet-up {
+    // change the layout: four rows with two items each
+    grid-template-rows:
+      auto  // 1. two items
+      auto  // 2. two items
+      auto  // 3. two items
+      auto  // 4. two items
+    ;
+
+    // new row placement for the items
+    .ydelser__item:nth-child(1),
+    .ydelser__item:nth-child(2) {
+      grid-row: 1;
+    }
+    .ydelser__item:nth-child(3),
+    .ydelser__item:nth-child(4) {
+      grid-row: 2;
+    }
+    .ydelser__item:nth-child(5),
+    .ydelser__item:nth-child(6) {
+      grid-row: 3;
+    }
+    .ydelser__item:nth-child(7),
+    .ydelser__item:nth-child(8) {
+      grid-row: 4;
+    }
+
+    // new col placement
+    .ydelser__item:nth-child(1), 
+    .ydelser__item:nth-child(3), 
+    .ydelser__item:nth-child(5), 
+    .ydelser__item:nth-child(7) {
+      grid-column: 3 / span 5;
+    }
+    .ydelser__item:nth-child(2), 
+    .ydelser__item:nth-child(4), 
+    .ydelser__item:nth-child(6), 
+    .ydelser__item:nth-child(8) {
+      grid-column: 8 / span 5;
+    }
+  }
+}
+
+.ydelser--two-rows {
+  @include for-laptop-up {
+    //change the layout: two rows with four items each
+    grid-template-rows:
+      auto  // 1. four items
+      auto  // 2. four items
+    ;
+    
+    // new row placement
+    .ydelser__item:nth-child(1), 
+    .ydelser__item:nth-child(2), 
+    .ydelser__item:nth-child(3), 
+    .ydelser__item:nth-child(4) {
+      grid-row: 1;
+    }
+    .ydelser__item:nth-child(5), 
+    .ydelser__item:nth-child(6), 
+    .ydelser__item:nth-child(7), 
+    .ydelser__item:nth-child(8) {
+      grid-row: 2;
+    }
+    
+    // new col placement
+    .ydelser__item:nth-child(1), .ydelser__item:nth-child(5) {
+      grid-column: 2 / span 3;
+    }
+    .ydelser__item:nth-child(2), .ydelser__item:nth-child(6) {
+      grid-column: 5 / span 3;
+    }
+    .ydelser__item:nth-child(3), .ydelser__item:nth-child(7) {
+      grid-column: 8 / span 3;
+    }
+    .ydelser__item:nth-child(4), .ydelser__item:nth-child(8) {
+      grid-column: 11 / span 3;
+    }
+
+    @include max-width-margin-auto;
+  }
+}
+
+/* 
+
+  Wordpress Helper Class:
+  the following class is for coloring the row-container,
+  via wordpress / salient / frontend editor.  
+
+*/
+.blue-bg { 
+  background-color: map-get($brand-colors, blue-4 ); 
+}
+
+/******************************/
+/******************************/
+/******************************/

@@ -1,0 +1,54 @@
+/* _dennisBlock.scss */
+
+@import url("https://use.typekit.net/kbs0hyb.css");
+
+/*main navigation*/
+
+#top nav >ul >li[class*="button_solid_color"] >a, body #header-outer.transparent #top nav >ul >li[class*="button_solid_color"] >a, #header-outer[data-lhe="animated_underline"] #top nav >ul >li[class*="button_solid_color"] >a, #header-outer[data-lhe="animated_underline"].transparent.dark-slide #top nav >ul >li[class*="button_solid_color"] >a:hover, #header-outer[data-lhe="default"].transparent.dark-slide #top nav >ul >li[class*="button_solid_color"] >a:hover, #header-outer[data-lhe="default"] #top nav .sf-menu > li[class*="button_solid_color"] > a:hover, #header-outer.dark-text #top nav >ul >li[class*="button_solid_color"] >a, #header-outer[data-lhe="default"] #top nav .sf-menu .current_page_item[class*="button_solid_color"] >a, #header-outer.transparent.dark-slide >#top nav >ul >li[class*="button_solid_color"] >a:hover {
+    color: #ffffff!important;
+    text-transform: uppercase!important;
+    font-weight: 600!important;
+    font-size: 13.43px!important;
+    letter-spacing: 0.88px!important;
+}
+
+
+#top nav > ul > li[class*="button_solid_color"] > a:before, #header-outer.transparent #top nav > ul > li[class*="button_solid_color"] > a:before {
+    height: 32px!important;
+}
+
+
+/*reverse row in desktop*/
+@media only screen and (min-width: 1001px) {   
+ .reverse-row >.col.span_12 {        
+flex-direction: row-reverse !important;  
+  }
+}
+
+.blue {
+	color: #1E45FF!important;
+}
+
+p {
+  color: #666a84;
+}
+
+#header-outer[data-full-width="true"] header >.container {
+    width: 100%;
+    max-width: 100%;
+    padding: 0 3%!important;
+}
+
+body.material #header-outer[data-full-width="true"]:not([data-format="left-header"]) #top nav >.buttons {
+    margin-left: 0px!important;
+}
+
+#top nav >ul >li[class*="button_solid_color"] >a, body #header-outer.transparent #top nav >ul >li[class*="button_solid_color"] >a, #header-outer[data-lhe="animated_underline"] #top nav >ul >li[class*="button_solid_color"] >a, #header-outer[data-lhe="animated_underline"].transparent.dark-slide #top nav >ul >li[class*="button_solid_color"] >a:hover, #header-outer[data-lhe="default"].transparent.dark-slide #top nav >ul >li[class*="button_solid_color"] >a:hover, #header-outer[data-lhe="default"] #top nav .sf-menu > li[class*="button_solid_color"] > a:hover, #header-outer.dark-text #top nav >ul >li[class*="button_solid_color"] >a, #header-outer[data-lhe="default"] #top nav .sf-menu .current_page_item[class*="button_solid_color"] >a, #header-outer.transparent.dark-slide >#top nav >ul >li[class*="button_solid_color"] >a:hover {
+    font-size: 12.4px!important;
+    letter-spacing: 0.88px!important;
+}
+
+/******************************/
+/******************************/
+/******************************/
+

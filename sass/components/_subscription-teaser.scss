@@ -1,0 +1,270 @@
+/* _subscription-teaser.scss */
+
+/* 
+
+  Subscription Teaser
+
+*/
+
+.subscription-teaser {
+  @include grid-cols-and-gap;
+  /* the additional empty rows are needed,
+  in order to create the half-grey-half-white-effect */
+  grid-template-rows:
+    20px  // 1. empty 
+    30px  // 2. empty
+    auto  // 3. image
+    20px  // 4. empty
+    auto  // 5. text-wrapper
+    30px  // 6. empty
+    20px  // 7. empty
+  ;
+
+  /* this element is only used to create the desired bg effect: 
+  it sits behind the other elements and covers most of the grid */
+  &__white-bg-element {
+    grid-column: content-start / content-end;      
+    grid-row: 2 / 7;
+    border-radius: $border-radius;
+    border: $border;
+    background-color: #ffffff;
+  }
+
+  &__image {
+    grid-column: 3 / 13;
+    grid-row: 3;
+    border-radius: $border-radius;
+  } 
+  
+  &__text-wrapper { 
+    grid-column: 3 / 13;
+    grid-row: 5; 
+  }
+
+  /* the half-n-half-colored background effect */
+  background: linear-gradient(
+    to bottom, 
+    #f4f6ff 0%, 
+    #f4f6ff 50%, 
+    #ffffff 50%, 
+    #ffffff 100%
+  );  
+}
+
+// change the layout on tablet upwards
+.subscription-teaser--horizontal {
+  @include for-tablet-up {
+    grid-template-rows: 
+    64px    // 1. empty
+    92px    // 2. empty
+    auto    // 3. image and text-wrapper
+    92px    // 4. empty
+    64px    // 5. empty
+    ;
+
+    .subscription-teaser__white-bg-element {
+      grid-row: 2 / 5; 
+    }
+
+    .subscription-teaser__image {
+      grid-column: 3 / span 3;
+      grid-row: 3; 
+    }
+
+    .subscription-teaser__text-wrapper {
+      grid-column: 6 / span 7;
+      grid-row: 3;
+
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      padding-left: 20px;
+    }
+  }
+}
+
+
+/* 
+
+  Wordpress helper class:
+
+  this class is set on the row, that contains the block via WP/FE editor, 
+  so that the half-colored-half-white effect  extends all the way out to the edges of the screen.  
+
+*/
+.half-n-half-bg-2 {
+  /* the background effect */
+  background: linear-gradient(
+    to bottom, 
+    #f4f6ff 0%, 
+    #f4f6ff 50%, 
+    #ffffff 50%, 
+    #ffffff 100%
+  );  
+}
+
+/* 
+
+  ABOVE IS DONE
+
+*/
+
+#package-teaser-grid-container {
+  max-width: 1600px;
+  margin: auto;
+
+  display: grid;
+  grid-template-columns: 5% repeat(12, 1fr ) 5%;
+  column-gap: 2%;
+  /* the two empty top- and botom rows are used 
+  to create the desired effect */
+  grid-template-rows: 50px 90px auto 90px 50px;
+  
+  /* the background effect */
+  background: linear-gradient(
+    to bottom, 
+    #f4f6ff 0%, 
+    #f4f6ff 50%, 
+    #ffffff 50%, 
+    #ffffff 100%
+  );  
+}
+
+#package-teaser-grid-container img {
+  display: block;
+  width: 100%;
+  margin-bottom: 0px !important;
+  border-radius: 8px;
+}
+
+
+/* this element is just used to create a white bg,
+behind the img and text wrapper */
+#package-teaser-grid-container #background {
+  /* style it */
+  border-radius: 8px;
+  border: solid 4px #f4f6ff;
+  background-color: #ffffff;
+
+  /* place it */
+  grid-column: 2 / span 12;
+  grid-row: 2 / span 3;
+}
+
+/* place the image */
+#package-teaser-grid-container .img-wrapper {
+  grid-column: 4 / span 3;
+  grid-row: 3;
+}
+
+/* place the text */
+#package-teaser-grid-container .text-wrapper {
+  grid-column: 7 / span 6;
+  grid-row: 3;
+
+  /* push the content to the right */
+  padding-left: 50px;
+
+  /* make the text-wrapper a grid container */
+  display: grid;
+  grid-template-rows: 20px max-content 20px max-content 40px max-content;
+}
+
+/* place the items inside of the text-wrapper */
+#package-teaser-grid-container h3 { grid-row: 2; }
+#package-teaser-grid-container p { grid-row: 4; }
+#package-teaser-grid-container .btn { grid-row: 6 }
+
+/* style the button */
+#package-teaser-grid-container .btn {
+  width: 203px;
+  height: 48px;
+  border-radius: 22px;
+  background-color: #1e45ff;
+
+  /* center its children - 
+  horizontally and vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* style the link */
+#package-teaser-grid-container a {
+  font-family: "neue-haas-unica", sans-serif;
+  font-size: 15.1px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.65;
+  letter-spacing: 0.43px;
+  text-align: center;
+  color: #f5f9fc;
+}
+
+/* tablets */
+@media only screen and (max-width: 768px) {
+
+  /* change the placement - push to the left */
+  #package-teaser-grid-container .img-wrapper {
+    grid-column: 3 / span 3;
+  }
+
+  /* same here, and adjust the spacings */
+  #package-teaser-grid-container .text-wrapper {
+    grid-column: 6 / span 7;
+    padding-left: 20px;
+    grid-template-rows: 0px max-content 10px max-content 20px max-content;
+  }
+  
+  /* resize the button */
+  #package-teaser-grid-container .btn {
+    width: 150px;
+    height: 44px;
+  }
+
+  /* also resize the link-text */
+  #package-teaser-grid-container a {
+    font-size: 12.1px;
+  }
+
+}
+
+/* mobile 
+#refactor : sometimes we use 500 and other times 480! go 500 all the way */
+@media only screen and (max-width: 500px) {
+  #package-teaser-grid-container {
+    /* change the grid - the outer repeated 5% cols
+    are necessary for the desired effect */
+    grid-template-columns: 5% 5% 1fr 5% 5%;
+    grid-template-rows: 30px auto 20px auto 30px;
+  }
+
+  /* start by placing the background element */
+  #package-teaser-grid-container #background {
+    grid-column: 2 / span 3;
+    grid-row: 1 / -1;
+  }
+
+  /* place the image and text in the middle col */
+  #package-teaser-grid-container .img-wrapper, 
+  #package-teaser-grid-container .text-wrapper {
+    grid-column: 3;
+  }
+
+  /* image row placement*/
+  #package-teaser-grid-container .img-wrapper {
+    grid-row: 2;
+  }
+
+  /* image row placement*/
+  #package-teaser-grid-container .text-wrapper {
+    grid-row: 4;
+  }
+}
+
+/******************************/
+/******************************/
+/******************************/
+
+

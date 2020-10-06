@@ -1,0 +1,19 @@
+/* _icon-right-arrow.scss */
+
+.icon-right-arrow {
+  border: solid map-get($brand-colors, green-2 );
+  border-width: 0 2px 2px 0;
+  display: inline-block;
+  padding: 3px;
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  margin-bottom: 1px;
+
+  /* solve conflict between salient and font-awesome,
+  without this rule, the icon is badly placed */
+  position: initial !important;
+}
+
+/******************************/
+/******************************/
+/******************************/

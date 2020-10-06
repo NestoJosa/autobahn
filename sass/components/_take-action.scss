@@ -1,0 +1,70 @@
+/* _take-action.scss */
+
+/* 
+
+  Take Action
+
+*/
+
+.take-action {
+  @include grid-cols-and-gap;
+  grid-template-rows:
+    30px // 1. empty
+    auto // 2. image
+    10px // 3. empty
+    auto // 4. text-wrapper
+    30px // 5. empty
+  ;
+
+  // col placement - place all of the elements in the content area
+  > * { grid-column: content-start / content-end;}
+
+  // row placement
+  &__image { grid-row: 2; }
+  &__text-wrapper { grid-row: 4; }
+
+  // create some space betweeen the texts
+  &__heading { 
+    padding: 15px 0 15px !important;  // overrule salient
+  }
+  &__sub-heading { padding-bottom: 10px !important; } // overrule salient
+}
+
+// horizontal layout on tablet upwards
+.take-action--horizontal {
+  @include for-tablet-up {
+    // redefine the rows
+    grid-template-rows: 
+      96px // 1. empty
+      auto // 2. image and text-wrapper
+      96px // 3. empty
+    ;
+
+    // reposition the elements
+    .take-action__image {
+      grid-column: 2 / span 4;
+      grid-row: 2;
+    }
+    .take-action__text-wrapper {
+      grid-column: 6 / span 8;
+      grid-row: 2;
+
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      padding-left: 20px;
+    }
+
+    // remove the heading top-margin
+    .take-action__heading {
+      padding-top: 0px !important;
+    }
+
+    @include max-width-margin-auto;
+  }
+}
+
+
+/******************************/
+/******************************/
+/******************************/

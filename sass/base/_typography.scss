@@ -1,0 +1,120 @@
+/* _typography.scss */
+
+/* 
+
+  Typography Rules
+
+*/
+
+h1 {
+  color: map-get($brand-colors, blue-1);
+  font-family: $font-stack;
+  font-size: 1.7rem; 
+  font-stretch: normal;
+  font-style: normal;
+  font-weight: 900;
+  letter-spacing: normal;
+  line-height: 1.2;
+  /* respond to tablets upwards */
+  @include for-tablet-up {
+    font-size: 2rem;
+    line-height: 2.4rem;
+  }
+  /* respond to laptop upwards */
+  @include for-laptop-up {
+    font-size: 2.72rem;
+    line-height: 3rem;
+  }
+  /* consider adding another media quiery for desktop-up */
+}
+
+/* this class is for the frontpage-hero-sub-heading ONLY -
+note: the hero's that can be seen on the sub-pages, are named sub-hero */
+.hero__sub-heading {
+  color: map-get($brand-colors, blue-2);
+  font-family: $font-stack;
+  
+  font-size: 1.1rem; 
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.4;
+  letter-spacing: normal;
+
+  /* responsivness */
+  @include for-tablet-up {
+    font-size: 1.2rem;
+    line-height: 1.6rem;
+  }
+
+  /* responsivness */
+  @include for-laptop-up {
+    font-size: 1.3rem;
+    line-height: 1.8rem;
+  }
+}
+
+
+h2 {
+  color: map-get($brand-colors, blue-3);
+  font-family: $font-stack;
+  font-size: 0.8375rem; 
+  font-stretch: normal;
+  font-style: normal;
+  font-weight: bold;
+  letter-spacing: 0.064375rem;
+  line-height: 1.49;
+  text-transform: uppercase;
+}
+
+h3 {
+  color: map-get($brand-colors, blue-1);
+  font-family: $font-stack;
+  font-size: 1.3rem; 
+  font-stretch: normal;
+  font-style: normal;
+  font-weight: 900;
+  letter-spacing: normal;
+  line-height: 1.28;
+}
+
+h4 {
+  color: map-get($brand-colors, blue-1);
+  font-family: $font-stack;
+  font-size: 1.2rem; 
+  font-stretch: normal;
+  font-style: normal;
+  font-weight: bold;
+  letter-spacing: normal;
+  line-height: 1.46;
+}
+
+p {
+  color: map-get($brand-colors, blue-2);
+  font-family: $font-stack;
+  font-size: 1.06rem;
+  font-stretch: normal;
+  font-style: normal;
+  font-weight: normal;
+  letter-spacing: normal;
+  line-height: 1.65;
+  letter-spacing: normal;
+}
+
+a {
+  color: map-get($brand-colors, blue-1);
+  font-family: $font-stack;
+  font-size: 1.06rem; 
+  font-stretch: normal;
+  font-style: normal;
+  font-weight: bold;
+  letter-spacing: normal;
+  line-height: 1.47;
+  letter-spacing: normal;
+}
+
+
+/******************************/
+/******************************/
+/******************************/
+

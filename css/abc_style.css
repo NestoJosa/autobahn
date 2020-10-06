@@ -1,0 +1,1432 @@
+@charset "UTF-8";
+/* main.scss */
+/* 
+
+  Abstracts
+
+*/
+/* import utilities */
+/* _variables.scss */
+/* 
+
+  VARIABLES
+
+*/
+/* the standard max width */
+/* three breakpoints */
+/* brand colors */
+/* font-stack */
+/* border-radius */
+/* border */
+/* box-shaddow */
+/* columns inside of the cards */
+/******************************/
+/******************************/
+/******************************/
+/* _mixins.scss */
+/* 
+
+  MIXINS - 
+
+  Note: layout related mixins live in _layout.scss
+
+*/
+/* 
+
+  for dev 
+
+*/
+/******************************/
+/******************************/
+/******************************/
+/* 
+
+  Base
+
+*/
+/* import the chunk of code that was at the top of the css, 
+when we first starting working with it */
+/* _dennisBlock.scss */
+@import url("https://use.typekit.net/kbs0hyb.css");
+/*main navigation*/
+#top nav > ul > li[class*="button_solid_color"] > a, body #header-outer.transparent #top nav > ul > li[class*="button_solid_color"] > a, #header-outer[data-lhe="animated_underline"] #top nav > ul > li[class*="button_solid_color"] > a, #header-outer[data-lhe="animated_underline"].transparent.dark-slide #top nav > ul > li[class*="button_solid_color"] > a:hover, #header-outer[data-lhe="default"].transparent.dark-slide #top nav > ul > li[class*="button_solid_color"] > a:hover, #header-outer[data-lhe="default"] #top nav .sf-menu > li[class*="button_solid_color"] > a:hover, #header-outer.dark-text #top nav > ul > li[class*="button_solid_color"] > a, #header-outer[data-lhe="default"] #top nav .sf-menu .current_page_item[class*="button_solid_color"] > a, #header-outer.transparent.dark-slide > #top nav > ul > li[class*="button_solid_color"] > a:hover {
+  color: #ffffff !important;
+  text-transform: uppercase !important;
+  font-weight: 600 !important;
+  font-size: 13.43px !important;
+  letter-spacing: 0.88px !important; }
+
+#top nav > ul > li[class*="button_solid_color"] > a:before, #header-outer.transparent #top nav > ul > li[class*="button_solid_color"] > a:before {
+  height: 32px !important; }
+
+/*reverse row in desktop*/
+@media only screen and (min-width: 1001px) {
+  .reverse-row > .col.span_12 {
+    flex-direction: row-reverse !important; } }
+.blue {
+  color: #1E45FF !important; }
+
+p {
+  color: #666a84; }
+
+#header-outer[data-full-width="true"] header > .container {
+  width: 100%;
+  max-width: 100%;
+  padding: 0 3% !important; }
+
+body.material #header-outer[data-full-width="true"]:not([data-format="left-header"]) #top nav > .buttons {
+  margin-left: 0px !important; }
+
+#top nav > ul > li[class*="button_solid_color"] > a, body #header-outer.transparent #top nav > ul > li[class*="button_solid_color"] > a, #header-outer[data-lhe="animated_underline"] #top nav > ul > li[class*="button_solid_color"] > a, #header-outer[data-lhe="animated_underline"].transparent.dark-slide #top nav > ul > li[class*="button_solid_color"] > a:hover, #header-outer[data-lhe="default"].transparent.dark-slide #top nav > ul > li[class*="button_solid_color"] > a:hover, #header-outer[data-lhe="default"] #top nav .sf-menu > li[class*="button_solid_color"] > a:hover, #header-outer.dark-text #top nav > ul > li[class*="button_solid_color"] > a, #header-outer[data-lhe="default"] #top nav .sf-menu .current_page_item[class*="button_solid_color"] > a, #header-outer.transparent.dark-slide > #top nav > ul > li[class*="button_solid_color"] > a:hover {
+  font-size: 12.4px !important;
+  letter-spacing: 0.88px !important; }
+
+/******************************/
+/******************************/
+/******************************/
+/* _resets.scss */
+/* remove any default padding/margin from all elements,
+and include the padding and border in their total width/height */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box; }
+
+/* remove the margin - wordpress reset */
+h1, h2, h3, h4, h5, h6, p, ul, li {
+  margin-top: 0 !important;
+  margin-right: 0 !important;
+  margin-bottom: 0 !important;
+  margin-left: 0 !important; }
+
+/* remove salients padding rules */
+p {
+  padding-top: 0 !important;
+  padding-right: 0 !important;
+  padding-bottom: 0 !important;
+  padding-left: 0 !important; }
+
+/* remove the bullets from the lists */
+li {
+  list-style-type: none !important; }
+
+/* remove the default underline from all links */
+a {
+  text-decoration: none; }
+
+/******************************/
+/******************************/
+/******************************/
+/* _layout.scss */
+/* 
+
+  Layout
+
+*/
+/* the grid */
+/* the max-width and margin auto */
+/* 
+
+  Media Queries 
+  
+*/
+/* first breakpoint */
+/* second breakpoint */
+/* third breakpoint */
+/* _typography.scss */
+/* 
+
+  Typography Rules
+
+*/
+h1 {
+  color: #2b357f;
+  font-family: "neue-haas-unica", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 1.7rem;
+  font-stretch: normal;
+  font-style: normal;
+  font-weight: 900;
+  letter-spacing: normal;
+  line-height: 1.2;
+  /* respond to tablets upwards */
+  /* respond to laptop upwards */
+  /* consider adding another media quiery for desktop-up */ }
+  @media only screen and (min-width: 43em) {
+    h1 {
+      font-size: 2rem;
+      line-height: 2.4rem; } }
+  @media only screen and (min-width: 62em) {
+    h1 {
+      font-size: 2.72rem;
+      line-height: 3rem; } }
+
+/* this class is for the frontpage-hero-sub-heading ONLY -
+note: the hero's that can be seen on the sub-pages, are named sub-hero */
+.hero__sub-heading {
+  color: #555d99;
+  font-family: "neue-haas-unica", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 1.1rem;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.4;
+  letter-spacing: normal;
+  /* responsivness */
+  /* responsivness */ }
+  @media only screen and (min-width: 43em) {
+    .hero__sub-heading {
+      font-size: 1.2rem;
+      line-height: 1.6rem; } }
+  @media only screen and (min-width: 62em) {
+    .hero__sub-heading {
+      font-size: 1.3rem;
+      line-height: 1.8rem; } }
+
+h2 {
+  color: #1e45ff;
+  font-family: "neue-haas-unica", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 0.8375rem;
+  font-stretch: normal;
+  font-style: normal;
+  font-weight: bold;
+  letter-spacing: 0.064375rem;
+  line-height: 1.49;
+  text-transform: uppercase; }
+
+h3 {
+  color: #2b357f;
+  font-family: "neue-haas-unica", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 1.3rem;
+  font-stretch: normal;
+  font-style: normal;
+  font-weight: 900;
+  letter-spacing: normal;
+  line-height: 1.28; }
+
+h4 {
+  color: #2b357f;
+  font-family: "neue-haas-unica", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 1.2rem;
+  font-stretch: normal;
+  font-style: normal;
+  font-weight: bold;
+  letter-spacing: normal;
+  line-height: 1.46; }
+
+p {
+  color: #555d99;
+  font-family: "neue-haas-unica", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 1.06rem;
+  font-stretch: normal;
+  font-style: normal;
+  font-weight: normal;
+  letter-spacing: normal;
+  line-height: 1.65;
+  letter-spacing: normal; }
+
+a {
+  color: #2b357f;
+  font-family: "neue-haas-unica", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 1.06rem;
+  font-stretch: normal;
+  font-style: normal;
+  font-weight: bold;
+  letter-spacing: normal;
+  line-height: 1.47;
+  letter-spacing: normal; }
+
+/******************************/
+/******************************/
+/******************************/
+/* 
+
+  Components - the order of the following imports does not matter,
+  but they are order following the apperance on the page
+
+*/
+/* _hero.scss */
+/* 
+
+  HERO
+
+  - the hero that can be seen on the frontpage ONLY:
+  the subpage hero's are named sub-hero. 
+
+*/
+.hero {
+  /* include the global grid and cols,
+  the rows are defined locally */
+  display: grid;
+  grid-template-columns: 5% [content-start] repeat(12, 1fr) [content-end] 5%;
+  column-gap: 2%;
+  /* note: the 0px rows will come in handy when the image changes,
+  and we need some empty rows before and after the image */
+  grid-template-rows: 0px auto 0px auto 10px auto 10px;
+  /* place the elements */
+  /* make the image take all horizontal space,
+  incuding the left- and right margins */ }
+  .hero__heading, .hero__sub-heading {
+    grid-column: content-start / content-end; }
+  .hero__heading {
+    grid-row: 4; }
+  .hero__sub-heading {
+    grid-row: 6; }
+  .hero__image {
+    grid-column: 1 / -1;
+    grid-row: 2; }
+
+/* respond to tablet-upwards: lessen the amount of rows 
+and reposition the elements */
+@media only screen and (min-width: 43em) {
+  .hero--horizontal {
+    /* redefine the rows. Note: the image will span
+    all of the rows top-down, so that's why its not included
+    in the following list of rows */
+    grid-template-rows: 50px 1.2fr 10px 1fr 50px;
+    /* reposition the elements -
+    span the heading and subheading from the left to the middle */
+    max-width: 1600px;
+    margin: auto; }
+    .hero--horizontal .hero__heading, .hero--horizontal .hero__sub-heading {
+      grid-column: content-start / span 7; }
+    .hero--horizontal .hero__heading {
+      grid-row: 2;
+      /* make the heading sit on top of the sub-heading */
+      align-self: end; }
+    .hero--horizontal .hero__sub-heading {
+      grid-row: 4; }
+    .hero--horizontal .hero__image {
+      /* span the img from the middle, to the right-most-edge,
+      including the right-margin */
+      grid-column: 8 / -1;
+      /* use all vertical space */
+      grid-row: 1 / -1; } }
+
+/******************************/
+/******************************/
+/******************************/
+/* _client-logos.scss */
+/* 
+
+  Client Logos
+
+*/
+.client-logos {
+  display: grid;
+  grid-template-columns: 5% [content-start] repeat(12, 1fr) [content-end] 5%;
+  column-gap: 2%;
+  grid-template-rows: 20px 1fr 10px 1fr 20px;
+  /*
+
+    place the elements 
+    
+  */ }
+  .client-logos__image:nth-child(1) {
+    grid-column: 2 / span 4;
+    grid-row: 2; }
+  .client-logos__image:nth-child(2) {
+    grid-column: 6 / span 4;
+    grid-row: 2; }
+  .client-logos__image:nth-child(3) {
+    grid-column: 10 / span 4;
+    grid-row: 2; }
+  .client-logos__image:nth-child(4) {
+    grid-column: 2 / span 4;
+    grid-row: 4; }
+  .client-logos__image:nth-child(5) {
+    grid-column: 6 / span 4;
+    grid-row: 4; }
+  .client-logos__image:nth-child(6) {
+    grid-column: 10 / span 4;
+    grid-row: 4; }
+
+/* 
+
+change the layout on tablets upwards - 
+from two rows of three client logos,
+on top of each other, 
+to all client logos in one row. 
+
+*/
+@media only screen and (min-width: 43em) {
+  .client-logos--less-rows {
+    /* lessen the rows */
+    grid-template-rows: 20px 1fr 20px;
+    /* 
+    
+      reposition the elements 
+      
+    */
+    max-width: 1600px;
+    margin: auto; }
+    .client-logos--less-rows .client-logos__image:nth-child(1) {
+      grid-column: 2 / span 2; }
+    .client-logos--less-rows .client-logos__image:nth-child(2) {
+      grid-column: 4 / span 2; }
+    .client-logos--less-rows .client-logos__image:nth-child(3) {
+      grid-column: 6 / span 2; }
+    .client-logos--less-rows .client-logos__image:nth-child(4) {
+      grid-column: 8 / span 2;
+      grid-row: 2; }
+    .client-logos--less-rows .client-logos__image:nth-child(5) {
+      grid-column: 10 / span 2;
+      grid-row: 2; }
+    .client-logos--less-rows .client-logos__image:nth-child(6) {
+      grid-column: 12 / span 2;
+      grid-row: 2; } }
+
+/******************************/
+/******************************/
+/******************************/
+/* _heading-block.scss */
+/* 
+
+  Heading Block
+
+*/
+.heading-block {
+  display: grid;
+  grid-template-columns: 5% [content-start] repeat(12, 1fr) [content-end] 5%;
+  column-gap: 2%;
+  grid-template-rows: 70px auto 25px auto 25px auto 40px;
+  /* center the texts */
+  text-align: center;
+  /* place all of the elements in the middle */ }
+  .heading-block > * {
+    grid-column: content-start / content-end; }
+  .heading-block__primary-heading {
+    grid-row: 2; }
+  .heading-block__secondary-heading {
+    grid-row: 4; }
+  .heading-block__paragraph {
+    grid-row: 6;
+    opacity: 0.8; }
+
+/* add more left- and right margin on tablet upwards, 
+by moving the headings one column inwards on each side */
+@media only screen and (min-width: 43em) {
+  .heading-block--more-margin {
+    max-width: 1600px;
+    margin: auto; }
+    .heading-block--more-margin .heading-block__secondary-heading, .heading-block--more-margin .heading-block__paragraph {
+      grid-column: 4 / 12; } }
+
+/******************************/
+/******************************/
+/******************************/
+/* _cards-grid.scss */
+/* 
+
+  Cards Grid
+
+*/
+.cards-grid-wrapper {
+  display: grid;
+  grid-template-columns: 5% [content-start] repeat(12, 1fr) [content-end] 5%;
+  column-gap: 2%;
+  grid-template-rows: 10px 1fr 10px; }
+  @media only screen and (min-width: 62em) {
+    .cards-grid-wrapper {
+      max-width: 1600px;
+      margin: auto; } }
+
+.cards-grid {
+  grid-column: content-start / content-end;
+  grid-row: 2;
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 20px; }
+
+@media only screen and (min-width: 62em) {
+  .cards-grid--three-cols {
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 2%; } }
+
+/******************************/
+/******************************/
+/******************************/
+/* _competence_cards.scss */
+/* 
+
+  Competence Cards 
+
+*/
+.competence-card {
+  border-radius: 8px;
+  border: solid 4px #f4f6ff;
+  /* the cards inner grid */
+  display: grid;
+  grid-template-columns: 10% 1fr 10%;
+  grid-template-rows: 64px 64px 42px 60px 29px 120px 85px;
+  /* place all elements in the middle col */
+  /* place an element on each second row */
+  /* make the icon fill the total height of its grid cell */ }
+  .competence-card > * {
+    grid-column: 2; }
+  .competence-card__icon {
+    grid-row: 2; }
+  .competence-card__heading {
+    grid-row: 4; }
+  .competence-card__subheading {
+    grid-row: 6; }
+  .competence-card__icon {
+    height: 100%; }
+
+/* 
+
+  Icons
+
+*/
+/* the cls-1 and cls-2 classes were added to the svg's,
+when exported from illustrator */
+.competence-card__icon {
+  /* .cls-1 is the colored fill */
+  /* .cls-2 is the line/stroke */ }
+  .competence-card__icon .cls-1 {
+    fill: #38d57e;
+    opacity: 0.6; }
+  .competence-card__icon .cls-2 {
+    fill: none;
+    stroke: #2b357f;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 2px; }
+
+/* the modifier class is added to the icon element via js,
+and its triggered when the element appears on screen.
+Note: the animation script does not run on mobile devices */
+.competence-card__icon--animate .cls-1 {
+  animation-name: fade-in;
+  animation-duration: 2s;
+  animation-timing-function: ease-out;
+  animation-delay: 1s;
+  animation-direction: normal;
+  animation-iteration-count: 1;
+  animation-fill-mode: backwards;
+  animation-play-state: running; }
+.competence-card__icon--animate .cls-2 {
+  animation-name: draw;
+  animation-duration: 8s;
+  animation-timing-function: ease-in-out;
+  animation-delay: 0s;
+  animation-direction: normal;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-play-state: running;
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000; }
+
+@keyframes fade-in {
+  from {
+    fill: transparent; }
+  to {
+    fill: #38d57e; } }
+@keyframes draw {
+  from {
+    stroke-dashoffset: 1000; }
+  to {
+    stroke-dashoffset: 0; } }
+/******************************/
+/******************************/
+/******************************/
+/******************************/
+/* _blog-post-cards.scss */
+/* 
+
+  WIP:
+
+  - refactor to mobile first
+  - use sass and nesting
+  - add variables to remove hard coded values,
+  that are repeated across the theme
+
+*/
+.blog-post-card {
+  border-radius: 8px;
+  box-shadow: 0 5px 10px rgba(154, 160, 185, 0.05), 0 15px 40px rgba(166, 173, 201, 0.2);
+  display: grid;
+  grid-template-columns: 10% 1fr 10%;
+  grid-template-rows: auto 49px 56px 29px 90px 29px 25px 31px; }
+  .blog-post-card__image {
+    grid-column: 1 / -1; }
+  .blog-post-card > *:not(.blog-post-card__image) {
+    grid-column: 2; }
+  .blog-post-card__heading {
+    grid-row: 3; }
+  .blog-post-card__excerpt {
+    grid-row: 5; }
+  .blog-post-card__link {
+    grid-row: 7;
+    justify-self: end; }
+  .blog-post-card__image {
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    height: 240px !important;
+    width: 100% !important;
+    object-fit: cover; }
+  .blog-post-card__link-text {
+    margin-right: 6px; }
+
+/* 
+
+  HACK
+
+*/
+/* override salients dynamic styles for the widget h4 headings */
+body #ernies_recent_blog_posts_widget-2 .cards-grid-wrapper .blog-post-card .blog-post-card__heading {
+  font-size: 1.2rem !important;
+  text-transform: none !important; }
+
+/******************************/
+/******************************/
+/******************************/
+/* _icon-right-arrow.scss */
+.icon-right-arrow {
+  border: solid #00cf77;
+  border-width: 0 2px 2px 0;
+  display: inline-block;
+  padding: 3px;
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  margin-bottom: 1px;
+  /* solve conflict between salient and font-awesome,
+  without this rule, the icon is badly placed */
+  position: initial !important; }
+
+/******************************/
+/******************************/
+/******************************/
+/* _link-to-blog.scss */
+/* 
+
+  Link To Blog
+
+*/
+.link-to-blog {
+  display: grid;
+  grid-template-columns: 5% [content-start] repeat(12, 1fr) [content-end] 5%;
+  column-gap: 2%;
+  grid-template-rows: 70px auto 70px;
+  /* element placement */
+  /* create some space between the text and the icon */ }
+  .link-to-blog__anchor {
+    grid-column: content-start / content-end;
+    grid-row: 2;
+    justify-self: center; }
+  .link-to-blog__anchor-text {
+    margin-right: 6px; }
+
+/******************************/
+/******************************/
+/******************************/
+/* _testimonial.scss */
+/* 
+
+  Testimonial 
+
+*/
+.testimonial {
+  display: grid;
+  grid-template-columns: 5% [content-start] repeat(12, 1fr) [content-end] 5%;
+  column-gap: 2%;
+  /* the additional empty rows are needed,
+  in order to create the half-white-half-grey-effect */
+  grid-template-rows: 20px 30px auto 20px auto 30px 20px;
+  /* this element is only used to create the desired 
+  half-white-half-grey effect - it sits behind the other elements
+  and covers most of the grid */
+  /* make the top half white,
+  and the bottom half grey */
+  background: linear-gradient(to bottom, #ffffff 0%, #ffffff 50%, #f4f6ff 50%, #f4f6ff 100%); }
+  .testimonial__white-bg-element {
+    grid-column: content-start / content-end;
+    grid-row: 2 / 7;
+    border-radius: 8px;
+    border: solid 4px #f4f6ff;
+    background-color: #ffffff; }
+  .testimonial__image, .testimonial__text-wrapper {
+    grid-column: 3 / 13; }
+  .testimonial__image {
+    grid-row: 3;
+    border-radius: 8px; }
+  .testimonial__text-wrapper {
+    grid-row: 5; }
+  .testimonial__quote {
+    font-weight: 300; }
+  .testimonial__signature {
+    margin-top: 10px !important; }
+
+@media only screen and (min-width: 43em) {
+  .testimonial--horizontal {
+    grid-template-rows: 64px 92px auto 92px 64px;
+    /* reposition the elements */
+    /* enlargen the quote */ }
+    .testimonial--horizontal .testimonial__white-bg-element {
+      grid-row: 2 / 5; }
+    .testimonial--horizontal .testimonial__image {
+      grid-column: 3 / span 3;
+      grid-row: 3; }
+    .testimonial--horizontal .testimonial__text-wrapper {
+      grid-column: 6 / span 7;
+      grid-row: 3;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      padding-left: 20px; }
+    .testimonial--horizontal .testimonial__quote {
+      font-size: 1.4rem;
+      line-height: 1.4; } }
+
+/* 
+
+/* 
+
+  this class is set on the row, that contains the testimonial block via WP/FE editor, 
+  so that it extends all the way out to the edges of the screen.
+
+*/
+.half-n-half-bg-1 {
+  background: linear-gradient(to bottom, #ffffff 0%, #ffffff 50%, #f4f6ff 50%, #f4f6ff 100%); }
+
+/******************************/
+/******************************/
+/******************************/
+/* _ydelser */
+/* 
+
+  Ydelser
+
+*/
+.ydelser {
+  display: grid;
+  grid-template-columns: 5% [content-start] repeat(12, 1fr) [content-end] 5%;
+  column-gap: 2%;
+  row-gap: 20px; }
+  .ydelser__item {
+    grid-column: content-start / content-end;
+    display: grid;
+    grid-template-rows: 5px auto 20px 50px 5px;
+    justify-items: center;
+    text-align: center; }
+  .ydelser__image {
+    grid-row: 2; }
+  .ydelser__name {
+    grid-row: 4; }
+  .ydelser__image {
+    border-radius: 8px;
+    width: 64px !important; }
+
+@media only screen and (min-width: 43em) {
+  .ydelser--four-rows {
+    grid-template-rows: auto auto auto auto; }
+    .ydelser--four-rows .ydelser__item:nth-child(1),
+    .ydelser--four-rows .ydelser__item:nth-child(2) {
+      grid-row: 1; }
+    .ydelser--four-rows .ydelser__item:nth-child(3),
+    .ydelser--four-rows .ydelser__item:nth-child(4) {
+      grid-row: 2; }
+    .ydelser--four-rows .ydelser__item:nth-child(5),
+    .ydelser--four-rows .ydelser__item:nth-child(6) {
+      grid-row: 3; }
+    .ydelser--four-rows .ydelser__item:nth-child(7),
+    .ydelser--four-rows .ydelser__item:nth-child(8) {
+      grid-row: 4; }
+    .ydelser--four-rows .ydelser__item:nth-child(1),
+    .ydelser--four-rows .ydelser__item:nth-child(3),
+    .ydelser--four-rows .ydelser__item:nth-child(5),
+    .ydelser--four-rows .ydelser__item:nth-child(7) {
+      grid-column: 3 / span 5; }
+    .ydelser--four-rows .ydelser__item:nth-child(2),
+    .ydelser--four-rows .ydelser__item:nth-child(4),
+    .ydelser--four-rows .ydelser__item:nth-child(6),
+    .ydelser--four-rows .ydelser__item:nth-child(8) {
+      grid-column: 8 / span 5; } }
+
+@media only screen and (min-width: 62em) {
+  .ydelser--two-rows {
+    grid-template-rows: auto auto;
+    max-width: 1600px;
+    margin: auto; }
+    .ydelser--two-rows .ydelser__item:nth-child(1),
+    .ydelser--two-rows .ydelser__item:nth-child(2),
+    .ydelser--two-rows .ydelser__item:nth-child(3),
+    .ydelser--two-rows .ydelser__item:nth-child(4) {
+      grid-row: 1; }
+    .ydelser--two-rows .ydelser__item:nth-child(5),
+    .ydelser--two-rows .ydelser__item:nth-child(6),
+    .ydelser--two-rows .ydelser__item:nth-child(7),
+    .ydelser--two-rows .ydelser__item:nth-child(8) {
+      grid-row: 2; }
+    .ydelser--two-rows .ydelser__item:nth-child(1), .ydelser--two-rows .ydelser__item:nth-child(5) {
+      grid-column: 2 / span 3; }
+    .ydelser--two-rows .ydelser__item:nth-child(2), .ydelser--two-rows .ydelser__item:nth-child(6) {
+      grid-column: 5 / span 3; }
+    .ydelser--two-rows .ydelser__item:nth-child(3), .ydelser--two-rows .ydelser__item:nth-child(7) {
+      grid-column: 8 / span 3; }
+    .ydelser--two-rows .ydelser__item:nth-child(4), .ydelser--two-rows .ydelser__item:nth-child(8) {
+      grid-column: 11 / span 3; } }
+
+/* 
+
+  Wordpress Helper Class:
+  the following class is for coloring the row-container,
+  via wordpress / salient / frontend editor.  
+
+*/
+.blue-bg {
+  background-color: #f4f6ff; }
+
+/******************************/
+/******************************/
+/******************************/
+/* _take-action.scss */
+/* 
+
+  Take Action
+
+*/
+.take-action {
+  display: grid;
+  grid-template-columns: 5% [content-start] repeat(12, 1fr) [content-end] 5%;
+  column-gap: 2%;
+  grid-template-rows: 30px auto 10px auto 30px; }
+  .take-action > * {
+    grid-column: content-start / content-end; }
+  .take-action__image {
+    grid-row: 2; }
+  .take-action__text-wrapper {
+    grid-row: 4; }
+  .take-action__heading {
+    padding: 15px 0 15px !important; }
+  .take-action__sub-heading {
+    padding-bottom: 10px !important; }
+
+@media only screen and (min-width: 43em) {
+  .take-action--horizontal {
+    grid-template-rows: 96px auto 96px;
+    max-width: 1600px;
+    margin: auto; }
+    .take-action--horizontal .take-action__image {
+      grid-column: 2 / span 4;
+      grid-row: 2; }
+    .take-action--horizontal .take-action__text-wrapper {
+      grid-column: 6 / span 8;
+      grid-row: 2;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      padding-left: 20px; }
+    .take-action--horizontal .take-action__heading {
+      padding-top: 0px !important; } }
+
+/******************************/
+/******************************/
+/******************************/
+/* _footer.scss */
+/* 
+
+  Footer
+
+*/
+.footer-wrapper {
+  background-color: #f4f6ff !important; }
+
+.footer {
+  display: grid;
+  grid-template-columns: 5% [content-start] repeat(12, 1fr) [content-end] 5%;
+  column-gap: 2%;
+  grid-template-rows: 7vw 288px 75px 100px 50px auto 25px; }
+  .footer > * {
+    grid-column: content-start / content-end; }
+  .footer__newsletter-signup {
+    grid-row: 2; }
+  .footer__links {
+    grid-row: 4; }
+  .footer__logo-link {
+    grid-row: 6; }
+  .footer__newsletter-signup {
+    background-color: white;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+  .footer__links {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start; }
+  .footer__logo-link {
+    height: auto !important;
+    width: 165px !important; }
+  .footer__logo-image {
+    display: block; }
+
+@media only screen and (min-width: 43em) {
+  .footer--horizontal {
+    grid-template-rows: 50px auto 50px 100px 50px;
+    max-width: 1600px;
+    margin: auto; }
+    .footer--horizontal .footer__newsletter-signup {
+      grid-column: 8 / content-end;
+      grid-row: 2 / 5;
+      height: 288px; }
+    .footer--horizontal .footer__logo-link {
+      grid-row: 2; }
+    .footer--horizontal .footer__links {
+      grid-row: 4; } }
+
+/* change the flex direction of the footer-links,
+from column to rows on larger screens, and adjust */
+@media only screen and (min-width: 62em) {
+  .footer__links--flex-dir-rows {
+    flex-direction: row;
+    align-items: flex-end;
+    width: 340px; } }
+
+/******************************/
+/******************************/
+/******************************/
+/* _sub-hero.scss */
+/* 
+
+  SUB HERO 
+
+*/
+.sub-hero {
+  display: grid;
+  grid-template-columns: 5% [content-start] repeat(12, 1fr) [content-end] 5%;
+  column-gap: 2%;
+  grid-template-rows: 50px auto 20px auto 30px auto 50px;
+  background-color: #f4f6ff; }
+  .sub-hero > * {
+    grid-column: content-start / content-end; }
+  .sub-hero__heading {
+    grid-row: 2; }
+  .sub-hero__sub-heading {
+    grid-row: 4; }
+  .sub-hero__image {
+    grid-row: 6; }
+
+@media only screen and (min-width: 43em) {
+  .sub-hero--horizontal {
+    grid-template-rows: 1.2fr 10px 1fr;
+    max-width: 1600px;
+    margin: auto; }
+    .sub-hero--horizontal .sub-hero__heading {
+      grid-column: content-start / span 5;
+      grid-row: 1;
+      align-self: end; }
+    .sub-hero--horizontal .sub-hero__sub-heading {
+      grid-column: content-start / span 6;
+      grid-row: 3; }
+    .sub-hero--horizontal .sub-hero__image {
+      grid-column: 8 / -1;
+      grid-row: 1 / -1; } }
+
+/******************************/
+/******************************/
+/******************************/
+/* _fordele.scss */
+/* 
+
+  Fordele
+
+*/
+.fordele {
+  display: grid;
+  grid-template-columns: 5% [content-start] repeat(12, 1fr) [content-end] 5%;
+  column-gap: 2%;
+  grid-template-rows: 10px auto 50px repeat(4, 1fr) 10px; }
+  .fordele > * {
+    grid-column: content-start / content-end; }
+  .fordele__image {
+    grid-row: 2; }
+  .fordele div:nth-of-type(1) {
+    grid-row: 4; }
+  .fordele div:nth-of-type(2) {
+    grid-row: 5; }
+  .fordele div:nth-of-type(3) {
+    grid-row: 6; }
+  .fordele div:nth-of-type(4) {
+    grid-row: 7; }
+
+/* Change the layout on tablets,
+remove the image and create a 2x2 grid for the cards */
+@media only screen and (min-width: 43em) {
+  .fordele--no-image {
+    /* change the grid, note: we are making use of an empty
+    column (nr 3) in order to add more space between the cards */
+    grid-template-columns: 1fr 2fr 20px 2fr 1fr;
+    grid-template-rows: 10px auto 10px auto 10px; }
+    .fordele--no-image .fordele__image {
+      display: none; }
+    .fordele--no-image div:nth-of-type(1) {
+      grid-column: 2;
+      grid-row: 2; }
+    .fordele--no-image div:nth-of-type(2) {
+      grid-column: 4;
+      grid-row: 2; }
+    .fordele--no-image div:nth-of-type(3) {
+      grid-column: 2;
+      grid-row: 4; }
+    .fordele--no-image div:nth-of-type(4) {
+      grid-column: 4;
+      grid-row: 4; } }
+
+/* change the layout on laptop upwards - 
+show the image again, and place the cards to the right */
+@media only screen and (min-width: 62em) {
+  .fordele--horizontal-w-img {
+    display: grid;
+    grid-template-columns: 5% [content-start] repeat(12, 1fr) [content-end] 5%;
+    column-gap: 2%;
+    grid-template-rows: 10px 1fr 1fr 10px;
+    max-width: 1600px;
+    margin: auto; }
+    .fordele--horizontal-w-img .fordele__image {
+      display: block;
+      grid-column: content-start / span 5;
+      grid-row: 1 / -1; }
+    .fordele--horizontal-w-img div:nth-of-type(1) {
+      grid-column: 8 / span 3;
+      grid-row: 2; }
+    .fordele--horizontal-w-img div:nth-of-type(2) {
+      grid-column: 11 / span 3;
+      grid-row: 2; }
+    .fordele--horizontal-w-img div:nth-of-type(3) {
+      grid-column: 8 / span 3;
+      grid-row: 3; }
+    .fordele--horizontal-w-img div:nth-of-type(4) {
+      grid-column: 11 / span 3;
+      grid-row: 3; } }
+
+/******************************/
+/******************************/
+/******************************/
+/* _f-and-s-card */
+/* 
+
+  f-and-s-card
+
+  The cards that can be seen in the product-page,
+  inside of the fordele- and sådan-virker-det-blocks.
+
+*/
+.f-and-s-card {
+  display: grid;
+  grid-template-rows: 64px 42px 30px 29px 150px 10px; }
+  .f-and-s-card__image {
+    grid-row: 1; }
+  .f-and-s-card__heading {
+    grid-row: 3; }
+  .f-and-s-card__body {
+    grid-row: 5; }
+
+/******************************/
+/******************************/
+/******************************/
+/* _sadan-virker-det */
+/* 
+
+  Sadan - The "Sådan virker det" block
+
+*/
+.sadan {
+  display: grid;
+  grid-template-columns: 5% [content-start] repeat(12, 1fr) [content-end] 5%;
+  column-gap: 2%;
+  grid-template-rows: 10px auto 50px repeat(4, 1fr) 10px; }
+  .sadan > * {
+    grid-column: content-start / content-end; }
+  .sadan__image {
+    grid-row: 2; }
+  .sadan div:nth-of-type(1) {
+    grid-row: 4; }
+  .sadan div:nth-of-type(2) {
+    grid-row: 5; }
+  .sadan div:nth-of-type(3) {
+    grid-row: 6; }
+  .sadan div:nth-of-type(4) {
+    grid-row: 7; }
+
+/* Change the layout on tablets,
+remove the image and create a 2x2 grid for the cards */
+@media only screen and (min-width: 43em) {
+  .sadan--no-image {
+    /* change the grid, note: we are making use of an empty
+    column (nr 3) in order to add more space between the cards */
+    grid-template-columns: 1fr 2fr 20px 2fr 1fr;
+    grid-template-rows: 10px auto 10px auto 10px; }
+    .sadan--no-image .sadan__image {
+      display: none; }
+    .sadan--no-image div:nth-of-type(1) {
+      grid-column: 2;
+      grid-row: 2; }
+    .sadan--no-image div:nth-of-type(2) {
+      grid-column: 4;
+      grid-row: 2; }
+    .sadan--no-image div:nth-of-type(3) {
+      grid-column: 2;
+      grid-row: 4; }
+    .sadan--no-image div:nth-of-type(4) {
+      grid-column: 4;
+      grid-row: 4; } }
+
+/* change the layout on laptop upwards - 
+show the image again, and place the cards to the left */
+@media only screen and (min-width: 62em) {
+  .sadan--horizontal-w-img {
+    display: grid;
+    grid-template-columns: 5% [content-start] repeat(12, 1fr) [content-end] 5%;
+    column-gap: 2%;
+    grid-template-rows: 10px 1fr 1fr 10px;
+    max-width: 1600px;
+    margin: auto; }
+    .sadan--horizontal-w-img .sadan__image {
+      display: block;
+      grid-column: 9 / content-end;
+      grid-row: 1 / -1; }
+    .sadan--horizontal-w-img div:nth-of-type(1) {
+      grid-column: content-start / span 3;
+      grid-row: 2; }
+    .sadan--horizontal-w-img div:nth-of-type(2) {
+      grid-column: 5 / span 3;
+      grid-row: 2; }
+    .sadan--horizontal-w-img div:nth-of-type(3) {
+      grid-column: content-start / span 3;
+      grid-row: 3; }
+    .sadan--horizontal-w-img div:nth-of-type(4) {
+      grid-column: 5 / span 3;
+      grid-row: 3; } }
+
+/******************************/
+/******************************/
+/******************************/
+/* _subscription-teaser.scss */
+/* 
+
+  Subscription Teaser
+
+*/
+.subscription-teaser {
+  display: grid;
+  grid-template-columns: 5% [content-start] repeat(12, 1fr) [content-end] 5%;
+  column-gap: 2%;
+  /* the additional empty rows are needed,
+  in order to create the half-grey-half-white-effect */
+  grid-template-rows: 20px 30px auto 20px auto 30px 20px;
+  /* this element is only used to create the desired bg effect: 
+  it sits behind the other elements and covers most of the grid */
+  /* the half-n-half-colored background effect */
+  background: linear-gradient(to bottom, #f4f6ff 0%, #f4f6ff 50%, #ffffff 50%, #ffffff 100%); }
+  .subscription-teaser__white-bg-element {
+    grid-column: content-start / content-end;
+    grid-row: 2 / 7;
+    border-radius: 8px;
+    border: solid 4px #f4f6ff;
+    background-color: #ffffff; }
+  .subscription-teaser__image {
+    grid-column: 3 / 13;
+    grid-row: 3;
+    border-radius: 8px; }
+  .subscription-teaser__text-wrapper {
+    grid-column: 3 / 13;
+    grid-row: 5; }
+
+@media only screen and (min-width: 43em) {
+  .subscription-teaser--horizontal {
+    grid-template-rows: 64px 92px auto 92px 64px; }
+    .subscription-teaser--horizontal .subscription-teaser__white-bg-element {
+      grid-row: 2 / 5; }
+    .subscription-teaser--horizontal .subscription-teaser__image {
+      grid-column: 3 / span 3;
+      grid-row: 3; }
+    .subscription-teaser--horizontal .subscription-teaser__text-wrapper {
+      grid-column: 6 / span 7;
+      grid-row: 3;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      padding-left: 20px; } }
+
+/* 
+
+  Wordpress helper class:
+
+  this class is set on the row, that contains the block via WP/FE editor, 
+  so that the half-colored-half-white effect  extends all the way out to the edges of the screen.  
+
+*/
+.half-n-half-bg-2 {
+  /* the background effect */
+  background: linear-gradient(to bottom, #f4f6ff 0%, #f4f6ff 50%, #ffffff 50%, #ffffff 100%); }
+
+/* 
+
+  ABOVE IS DONE
+
+*/
+#package-teaser-grid-container {
+  max-width: 1600px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 5% repeat(12, 1fr) 5%;
+  column-gap: 2%;
+  /* the two empty top- and botom rows are used 
+  to create the desired effect */
+  grid-template-rows: 50px 90px auto 90px 50px;
+  /* the background effect */
+  background: linear-gradient(to bottom, #f4f6ff 0%, #f4f6ff 50%, #ffffff 50%, #ffffff 100%); }
+
+#package-teaser-grid-container img {
+  display: block;
+  width: 100%;
+  margin-bottom: 0px !important;
+  border-radius: 8px; }
+
+/* this element is just used to create a white bg,
+behind the img and text wrapper */
+#package-teaser-grid-container #background {
+  /* style it */
+  border-radius: 8px;
+  border: solid 4px #f4f6ff;
+  background-color: #ffffff;
+  /* place it */
+  grid-column: 2 / span 12;
+  grid-row: 2 / span 3; }
+
+/* place the image */
+#package-teaser-grid-container .img-wrapper {
+  grid-column: 4 / span 3;
+  grid-row: 3; }
+
+/* place the text */
+#package-teaser-grid-container .text-wrapper {
+  grid-column: 7 / span 6;
+  grid-row: 3;
+  /* push the content to the right */
+  padding-left: 50px;
+  /* make the text-wrapper a grid container */
+  display: grid;
+  grid-template-rows: 20px max-content 20px max-content 40px max-content; }
+
+/* place the items inside of the text-wrapper */
+#package-teaser-grid-container h3 {
+  grid-row: 2; }
+
+#package-teaser-grid-container p {
+  grid-row: 4; }
+
+#package-teaser-grid-container .btn {
+  grid-row: 6; }
+
+/* style the button */
+#package-teaser-grid-container .btn {
+  width: 203px;
+  height: 48px;
+  border-radius: 22px;
+  background-color: #1e45ff;
+  /* center its children - 
+  horizontally and vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+/* style the link */
+#package-teaser-grid-container a {
+  font-family: "neue-haas-unica", sans-serif;
+  font-size: 15.1px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.65;
+  letter-spacing: 0.43px;
+  text-align: center;
+  color: #f5f9fc; }
+
+/* tablets */
+@media only screen and (max-width: 768px) {
+  /* change the placement - push to the left */
+  #package-teaser-grid-container .img-wrapper {
+    grid-column: 3 / span 3; }
+
+  /* same here, and adjust the spacings */
+  #package-teaser-grid-container .text-wrapper {
+    grid-column: 6 / span 7;
+    padding-left: 20px;
+    grid-template-rows: 0px max-content 10px max-content 20px max-content; }
+
+  /* resize the button */
+  #package-teaser-grid-container .btn {
+    width: 150px;
+    height: 44px; }
+
+  /* also resize the link-text */
+  #package-teaser-grid-container a {
+    font-size: 12.1px; } }
+/* mobile 
+#refactor : sometimes we use 500 and other times 480! go 500 all the way */
+@media only screen and (max-width: 500px) {
+  #package-teaser-grid-container {
+    /* change the grid - the outer repeated 5% cols
+    are necessary for the desired effect */
+    grid-template-columns: 5% 5% 1fr 5% 5%;
+    grid-template-rows: 30px auto 20px auto 30px; }
+
+  /* start by placing the background element */
+  #package-teaser-grid-container #background {
+    grid-column: 2 / span 3;
+    grid-row: 1 / -1; }
+
+  /* place the image and text in the middle col */
+  #package-teaser-grid-container .img-wrapper,
+  #package-teaser-grid-container .text-wrapper {
+    grid-column: 3; }
+
+  /* image row placement*/
+  #package-teaser-grid-container .img-wrapper {
+    grid-row: 2; }
+
+  /* image row placement*/
+  #package-teaser-grid-container .text-wrapper {
+    grid-row: 4; } }
+/******************************/
+/******************************/
+/******************************/
+/* _subcription-card */
+/* 
+
+  Sub Cards
+
+*/
+.subscription-card {
+  display: grid;
+  grid-template-columns: 10% 1fr 10%;
+  grid-template-rows: 50px 10px 75px 10px 50px 10px min-content 50px;
+  /* place the remaining elements on each second row, so that there
+  will be an empty row between all elements */ }
+  .subscription-card > *:not(.subscription-card__meta-heading) {
+    grid-column: 2; }
+  .subscription-card__meta-heading {
+    grid-column: 1 / -1;
+    grid-row: 1; }
+  .subscription-card__heading {
+    grid-row: 3; }
+  .subscription-card__price {
+    grid-row: 5; }
+  .subscription-card__list {
+    grid-row: 7; }
+  .subscription-card__meta-heading {
+    border-bottom: 7px solid #2b357f;
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    /* horizontal/vertical centering */
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+  .subscription-card__heading {
+    align-self: end; }
+  .subscription-card__list {
+    /* wp overrides */
+    margin: 0 !important; }
+  .subscription-card__item {
+    display: flex;
+    padding: 5px 0px;
+    line-height: 1.3rem;
+    font-size: 14px; }
+
+/* 
+
+  Modifiers
+
+*/
+.subscription-card--promoted {
+  /* refactor: make the shaddow effect into a sass var */
+  border-radius: 8px;
+  box-shadow: 0 5px 10px rgba(154, 160, 185, 0.05), 0 15px 40px rgba(166, 173, 201, 0.2);
+  /* change the meta-heading based on the promoted modifier */ }
+  .subscription-card--promoted .subscription-card__meta-heading {
+    border: none;
+    background-color: #00cf77;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px; }
+
+/* the checkmark  */
+.fa-check {
+  color: #00cf77;
+  padding: 3.5px 7px 0px 0px;
+  font-size: 13px; }
+
+/******************************/
+/******************************/
+/******************************/
+/* WIP */
+/* the contact-form is parked,
+waiting for further instructions */
+/* _contact-form.scss */
+/* 
+
+  Contact Form
+
+*/
+/* 
+
+  CONTACT PAGE / BOOK A MEETING PAGE
+  contact-form
+
+*/
+.contact-form {
+  max-width: 1600px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 5% repeat(12, 1fr) 5%;
+  column-gap: 2%;
+  grid-template-rows: 50px 30px 25px auto 50px; }
+
+/* place the elements */
+.contact-form__heading {
+  grid-column: 2 / 7;
+  grid-row: 2; }
+
+.contact-form__body {
+  grid-column: 2 / 7;
+  grid-row: 4; }
+
+.contact-form__form {
+  grid-column: 8 / 14;
+  grid-row: 4; }
+
+/* add some space under the p's */
+.contact-form__body p {
+  margin-bottom: 1.5em !important; }
+
+/* remove the possibility to resize the text area */
+.contact-form__form textarea {
+  resize: none; }
+
+/* change the grid when we hit standard ipad size*/
+@media only screen and (max-width: 768px) {
+  .contact-form--grid-mobile {
+    /* one col layout */
+    grid-template-columns: 5% 1fr 5%;
+    /* add more rows */
+    grid-template-rows: 50px 30px 25px auto 50px auto 50px; }
+
+  /* update the placement of the elements,
+  start by placing them all in the middle column */
+  .contact-form--grid-mobile > * {
+    grid-column: 2; }
+
+  /* and the contact form on the new row nr6. */
+  .contact-form--grid-mobile .contact-form__form {
+    grid-row: 6; } }
+/******************************/
+/******************************/
+/******************************/
+/* /WIP */
+/******************************/
+/******************************/
+/******************************/
+
+/*# sourceMappingURL=abc_style.css.map */

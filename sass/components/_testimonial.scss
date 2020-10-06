@@ -1,0 +1,116 @@
+/* _testimonial.scss */
+
+/* 
+
+  Testimonial 
+
+*/
+
+.testimonial {
+  @include grid-cols-and-gap;
+  /* the additional empty rows are needed,
+  in order to create the half-white-half-grey-effect */
+  grid-template-rows:
+    20px  // 1. empty 
+    30px  // 2. empty
+    auto  // 3. image
+    20px  // 4. empty
+    auto  // 5. text-wrapper
+    30px  // 6. empty
+    20px  // 7. empty
+  ;
+
+  /* this element is only used to create the desired 
+  half-white-half-grey effect - it sits behind the other elements
+  and covers most of the grid */
+  &__white-bg-element {
+    grid-column: content-start / content-end;      
+    grid-row: 2 / 7;
+    border-radius: $border-radius;
+    border: $border;
+    background-color: #ffffff;
+  }
+
+  &__image, &__text-wrapper { grid-column: 3 / 13; }
+
+  &__image { 
+    grid-row: 3;
+    border-radius: $border-radius; 
+  }
+
+  &__text-wrapper { grid-row: 5; }
+
+  // make the quote somewhat lighter than default p's
+  &__quote { font-weight: 300; }
+
+  &__signature { margin-top: 10px !important; }
+
+  /* make the top half white,
+  and the bottom half grey */
+  background: linear-gradient(to bottom, 
+    #ffffff 0%, 
+    #ffffff 50%, 
+    #f4f6ff 50%, 
+    #f4f6ff 100%
+  ); 
+}
+
+.testimonial--horizontal {
+  @include for-tablet-up {
+    grid-template-rows: 
+      64px    // 1. empty
+      92px    // 2. empty
+      auto    // 3. image and text-wrapper
+      92px    // 4. empty
+      64px    // 5. empty
+    ;
+
+    /* reposition the elements */
+    .testimonial__white-bg-element {
+      grid-row: 2 / 5; 
+    }
+    .testimonial__image {
+      grid-column: 3 / span 3;
+      grid-row: 3; 
+    }
+    .testimonial__text-wrapper {
+      grid-column: 6 / span 7;
+      grid-row: 3;
+
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      padding-left: 20px;
+    }
+    
+    /* enlargen the quote */
+    .testimonial__quote {
+      font-size: 1.4rem;
+      line-height: 1.4;
+    }
+  }
+}
+
+
+/* 
+
+/* 
+
+  this class is set on the row, that contains the testimonial block via WP/FE editor, 
+  so that it extends all the way out to the edges of the screen.
+
+*/
+
+
+.half-n-half-bg-1 {
+  background: linear-gradient(to bottom, 
+    #ffffff 0%, 
+    #ffffff 50%, 
+    #f4f6ff 50%, 
+    #f4f6ff 100%
+  );
+}
+
+/******************************/
+/******************************/
+/******************************/

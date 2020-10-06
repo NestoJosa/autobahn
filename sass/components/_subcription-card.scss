@@ -1,0 +1,95 @@
+/* _subcription-card */
+
+/* 
+
+  Sub Cards
+
+*/
+
+.subscription-card {
+  display: grid;
+  grid-template-columns: $card-inner-columns;
+  grid-template-rows:  
+    50px          // 1. meta-heading
+    10px          // 2. empty
+    75px         // 3. heading
+    10px          // 4. empty
+    50px          // 5. price
+    10px          // 6. empty
+    min-content   // 7. list
+    50px          // 8. empty
+  ;
+
+  // exlude the meta-heading, from the following rule 
+  // because we want the meta-heading to cover the entire horizontal space
+  > *:not(.subscription-card__meta-heading) { grid-column: 2; }
+
+  &__meta-heading {
+    grid-column: 1 / -1;
+    grid-row: 1;
+  }
+  
+  /* place the remaining elements on each second row, so that there
+  will be an empty row between all elements */
+  &__heading { grid-row: 3; }
+  &__price { grid-row: 5; }
+  &__list { grid-row: 7; }
+
+  &__meta-heading {
+    border-bottom: 7px solid map-get($brand-colors, blue-1);
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    /* horizontal/vertical centering */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__heading {
+    align-self: end;
+  }
+
+  &__list {
+    /* wp overrides */
+    margin: 0 !important;
+  }
+
+  &__item {
+    display: flex;
+    padding: 5px 0px;
+    line-height: 1.3rem;
+    font-size: 14px;
+  }
+    
+}
+
+/* 
+
+  Modifiers
+
+*/
+.subscription-card--promoted {
+  /* refactor: make the shaddow effect into a sass var */
+  border-radius: $border-radius;
+  box-shadow: $box-shaddow;
+
+  /* change the meta-heading based on the promoted modifier */
+  & .subscription-card__meta-heading {
+    border: none; // the meta-heading has a blue bottom border as default
+    background-color: map-get($brand-colors , green-2 );
+    border-top-left-radius: $border-radius;
+    border-top-right-radius: $border-radius;
+  }
+}
+
+/* the checkmark  */
+.fa-check {
+  color: #00cf77;
+  padding: 3.5px 7px 0px 0px;
+  font-size: 13px;
+}
+
+/******************************/
+/******************************/
+/******************************/

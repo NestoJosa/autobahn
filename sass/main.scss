@@ -1,0 +1,61 @@
+/* main.scss */
+
+/* 
+
+  Abstracts
+
+*/
+/* import utilities */
+@import 'abstracts/variables';
+@import 'abstracts/mixins';
+
+
+/* 
+
+  Base
+
+*/
+
+/* import the chunk of code that was at the top of the css, 
+when we first starting working with it */
+@import 'base/dennisBlock';
+@import 'base/resets';
+@import 'base/layout';
+@import 'base/typography';
+
+
+/* 
+
+  Components - the order of the following imports does not matter,
+  but they are order following the apperance on the page
+
+*/
+@import 'components/hero';
+@import 'components/client-logos';
+@import 'components/heading-block';
+@import 'components/cards-grid';
+@import 'components/competence-cards';
+@import 'components/blog-post-cards';
+@import 'components/icon-right-arrow';
+@import 'components/link-to-blog';
+@import 'components/testimonial';
+@import 'components/ydelser';
+@import 'components/take-action';
+@import 'components/footer';
+@import 'components/sub-hero';
+@import 'components/fordele';
+@import 'components/f-and-s-card';
+@import 'components/sadan';
+@import 'components/subscription-teaser';
+@import 'components/subcription-card';
+
+/* WIP */
+/* the contact-form is parked,
+awaiting for further instructions */
+@import 'components/contact-form';
+/* /WIP */
+
+
+/******************************/
+/******************************/
+/******************************/

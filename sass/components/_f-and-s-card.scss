@@ -1,0 +1,31 @@
+/* _f-and-s-card */
+
+/* 
+
+  f-and-s-card
+
+  The cards that can be seen in the product-page,
+  inside of the fordele- and sådan-virker-det-blocks.
+
+*/
+
+// The Fordele Cards
+.f-and-s-card {
+  display: grid;
+  grid-template-rows:
+    64px    // 1. image
+    42px    // 2. empty
+    30px    // 3. heading
+    29px    // 4. empty
+    150px   // 5. body 
+    10px    // 6. empty
+  ;
+
+  &__image { grid-row: 1; }
+  &__heading { grid-row: 3; }
+  &__body { grid-row: 5; }
+}
+
+/******************************/
+/******************************/
+/******************************/

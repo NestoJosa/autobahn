@@ -1,0 +1,30 @@
+/* _link-to-blog.scss */
+
+/* 
+
+  Link To Blog
+
+*/
+
+.link-to-blog {
+  @include grid-cols-and-gap;
+  grid-template-rows:
+    70px  // 1. empty
+    auto  // 2. link
+    70px  // 3. empty
+  ;
+  
+  /* element placement */
+  &__anchor { 
+    grid-column: content-start / content-end;
+    grid-row: 2;
+    justify-self: center;
+  }
+  
+  /* create some space between the text and the icon */
+  &__anchor-text { margin-right: 6px; }
+}
+
+/******************************/
+/******************************/
+/******************************/

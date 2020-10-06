@@ -1,0 +1,72 @@
+/* _blog-post-cards.scss */
+
+
+/* 
+
+  WIP:
+
+  - refactor to mobile first
+  - use sass and nesting
+  - add variables to remove hard coded values,
+  that are repeated across the theme
+
+*/
+
+.blog-post-card {
+  border-radius: $border-radius;
+  box-shadow: $box-shaddow;
+
+  // the inner grid
+  display: grid;
+  grid-template-columns: $card-inner-columns; // => one col with left- and right margin  
+  grid-template-rows: 
+    auto  // 1. img
+    49px  // 2. empty
+    56px  // 3. heading
+    29px  // 4. empty
+    90px  // 5. excerpt
+    29px  // 6. empty
+    25px  // 7. link
+    31px  // 8. empty
+  ;
+
+  // Element Placement
+  &__image { grid-column: 1 / -1; }
+  // place all of the elements on the middle column - except for the image
+  > *:not(.blog-post-card__image) { grid-column: 2; }
+  &__heading { grid-row: 3; }
+  &__excerpt { grid-row: 5; }
+  &__link {
+    grid-row: 7;
+    justify-self: end;
+  }
+  
+  &__image {
+    border-top-left-radius: $border-radius;
+    border-top-right-radius: $border-radius;
+    height: 240px !important;
+    width: 100% !important; 
+    object-fit: cover;
+  }
+
+  &__link-text {
+    margin-right: 6px;
+  }
+}
+
+
+/* 
+
+  HACK
+
+*/
+
+/* override salients dynamic styles for the widget h4 headings */
+body #ernies_recent_blog_posts_widget-2 .cards-grid-wrapper .blog-post-card .blog-post-card__heading {
+  font-size: 1.2rem !important;
+  text-transform: none !important;
+}
+
+/******************************/
+/******************************/
+/******************************/

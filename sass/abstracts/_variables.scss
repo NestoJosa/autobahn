@@ -1,0 +1,47 @@
+/* _variables.scss */
+
+/* 
+
+  VARIABLES
+
+*/
+
+/* the standard max width */
+$content-wrapper-max-width: 1600px;
+
+/* three breakpoints */
+$breakpoints: (
+  'large': 82em, // => 1312px 
+  'medium': 62em, // => 992px
+  'small': 43em, // => 688px
+);
+
+/* brand colors */
+$brand-colors: (
+  'blue-1': #2b357f,
+  'blue-2': #555d99,
+  'blue-3': #1e45ff,
+  'blue-4': #f4f6ff,
+  'green-1': #38d57e,
+  'green-2': #00cf77,
+);
+
+/* font-stack */
+$font-stack: "neue-haas-unica", "Helvetica Neue", Helvetica, Arial, sans-serif !default;
+
+/* border-radius */
+$border-radius: 8px;
+
+/* border */
+$border: solid 4px #f4f6ff;
+
+/* box-shaddow */
+$box-shaddow:
+  0  5px 10px rgba(154,160,185,0.05),
+  0 15px 40px rgba(166,173,201,0.2)
+;
+
+/* columns inside of the cards */
+$card-inner-columns: 10% 1fr 10%;
+
+

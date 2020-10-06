@@ -1,0 +1,104 @@
+/* _competence_cards.scss */
+
+/* 
+
+  Competence Cards 
+
+*/
+
+.competence-card {
+  border-radius: $border-radius;
+  border: $border;
+
+  /* the cards inner grid */
+  display: grid;
+  grid-template-columns: $card-inner-columns;
+  grid-template-rows: 
+    64px   /* 1. empty */        
+    64px   /* 2. icon */  
+    42px   /* 3. e. */    
+    60px   /* 4. heading */    
+    29px   /* 5. e. */    
+    120px  /* 6. subheading */    
+    85px   /* 7. e. */    
+  ;
+
+  /* place all elements in the middle col */
+  > * { grid-column: 2; }
+
+  /* place an element on each second row */
+  &__icon { grid-row: 2; }
+  &__heading { grid-row: 4; }
+  &__subheading { grid-row: 6; }
+
+  /* make the icon fill the total height of its grid cell */
+  &__icon { height: 100%; }
+}
+
+/* 
+
+  Icons
+
+*/
+
+/* the cls-1 and cls-2 classes were added to the svg's,
+when exported from illustrator */
+.competence-card__icon {
+  /* .cls-1 is the colored fill */
+  & .cls-1 {
+    fill: map-get($brand-colors, green-1);
+    opacity: 0.6;
+  }
+  /* .cls-2 is the line/stroke */
+  & .cls-2 {
+    fill: none;
+    stroke: map-get($brand-colors, blue-1);
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 2px;
+  }
+}
+
+/* the modifier class is added to the icon element via js,
+and its triggered when the element appears on screen.
+Note: the animation script does not run on mobile devices */
+.competence-card__icon--animate {
+  & .cls-1 {
+    animation-name: fade-in;
+    animation-duration: 2s; 
+    animation-timing-function: ease-out; 
+    animation-delay: 1s;
+    animation-direction: normal;
+    animation-iteration-count: 1;
+    animation-fill-mode: backwards;
+    animation-play-state: running; 
+  }
+
+  & .cls-2 {
+    animation-name: draw;
+    animation-duration: 8s; 
+    animation-timing-function: ease-in-out; 
+    animation-delay: 0s;
+    animation-direction: normal;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-play-state: running; 
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+  }
+}
+
+@keyframes fade-in {
+  from { fill: transparent; }
+  to { fill: map-get($brand-colors, green-1); }
+}
+
+@keyframes draw {
+  from { stroke-dashoffset: 1000; }
+  to { stroke-dashoffset: 0; }
+}
+
+/******************************/
+/******************************/
+/******************************/
+/******************************/
