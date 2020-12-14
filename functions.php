@@ -8,8 +8,7 @@ function add_theme_scripts() {
 
   $nectar_theme_version = nectar_get_theme_version();
   
-  /* enq. our custom styles - the file is prepended with an abc-prefix,
-  that stands for AutoBahnCopenhagen */
+  /* enq. our custom styles - the file is prepended with an abc-prefix, that stands for AutoBahnCopenhagen */
   wp_enqueue_style( 'salient-child-style', get_stylesheet_directory_uri() . '/css/abc_style.css', '', $nectar_theme_version );
 
   /* enq. our custom.js */
