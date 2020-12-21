@@ -1,6 +1,6 @@
 console.log('custom.js loaded!');
 
-/* load scripts for desktop-sized screens based on a media query */
+/* load scripts for desktop-sized screens upwards based on a media query */
 /* src: https://www.encode8.com/js/how-to-conditionally-load-javascript-files/ */
 
 /* if the screen is at least 1024px in width */
